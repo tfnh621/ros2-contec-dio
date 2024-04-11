@@ -4,14 +4,15 @@ CONTEC Digital I/O for ROS 2
 
 ## Linux 用ドライバー（API-DIO(LNX)）のビルドとインストール
 
-1. コンテックのホームページから最新のデバイスドライバをダウンロードする（ダウンロードには会員登録が必要）
+1. Linux カーネルのヘッダーファイルをインストールする: `sudo apt install linux-headers-$(uname -r)`
+2. コンテックのホームページから最新のデバイスドライバをダウンロードする（ダウンロードには会員登録が必要）
    - 製品検索ページ: https://www.contec.com/jp/download/search/?type=858a9226-3053-4418-80b9-a61e0b6ff8ac
    - [Linux版デジタル入出力ドライバ API-DIO(LNX) 開発環境(フルセット) Ver. 8.80](https://www.contec.com/jp/download/contract/contract1?itemid=527cac72-4150-4ff8-b653-e3d552fa9bc0&downloaditemid=4132766f-bd75-420e-b437-d1fa52b21ec8)
    <!-- - [Windows版高機能デジタル入出力ドライバ API-DIO(WDM) 開発環境(フルセット) Ver. 9.90](https://www.contec.com/jp/download/contract/contract2?itemid=527cac72-4150-4ff8-b653-e3d552fa9bc0&downloaditemid=14506a61-ede1-4dc4-a335-2b5fc031ebcb) -->
-2. ダウンロードしたファイルを解凍する: `tar zxvf cdio_880F.tgz` (880 はバージョン)
-3. ドライバのソースコードがあるディレクトリに移動する: `cd contec/cdio`
-4. `make` でビルドする
-5. `sudo make install` でビルドしたドライバーをインストールする
+3. ダウンロードしたファイルを解凍する: `tar zxvf cdio_880F.tgz` (880 はバージョン)
+4. ドライバのソースコードがあるディレクトリに移動する: `cd contec/cdio`
+5. `make` でビルドする
+6. `sudo make install` でビルドしたドライバーをインストールする
 
 ## API-DIO(LNX) デジタル入出力用ドライバ がビルドできない問題について
 
