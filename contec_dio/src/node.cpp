@@ -201,7 +201,7 @@ class ContecDioNode final : public rclcpp::Node {
             for (auto b: device.get_echo_back_bits()) {
                 auto message = contec_dio_interfaces::msg::CdioBool();
                 message.data = b;
-                input_bit_publishers.at(j++)->publish(message);
+                echo_back_bit_publishers.at(j++)->publish(message);
             }
         }
     }
