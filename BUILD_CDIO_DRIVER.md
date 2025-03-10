@@ -18,7 +18,7 @@ cd config && sudo ./config <<< $'s\ny\ny\nq' && sudo ./contec_dio_start.sh
 ```
 
 <details>
-<summary>以下は詳細な説明（クリックで展開）</summary>
+<summary>詳細な説明（クリックで展開）</summary>
 
 ## デバイスドライバの入手
 
