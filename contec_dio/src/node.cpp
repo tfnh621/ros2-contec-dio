@@ -192,14 +192,21 @@ class ContecDioNode final : public rclcpp::Node {
 
     void publisher_callback() const {
         auto i = 0, j = 0;
+        std::timespec ts{};
         for (const auto &device: devices) {
+            std::timespec_get(&ts, TIME_UTC);
             for (auto b: device.get_input_bits()) {
                 auto message = contec_dio_interfaces::msg::CdioBool();
+                message.header.stamp.sec = ts.tv_sec;
+                message.header.stamp.nanosec = ts.tv_nsec;
                 message.data = b;
                 input_bit_publishers.at(i++)->publish(message);
             }
+            std::timespec_get(&ts, TIME_UTC);
             for (auto b: device.get_echo_back_bits()) {
                 auto message = contec_dio_interfaces::msg::CdioBool();
+                message.header.stamp.sec = ts.tv_sec;
+                message.header.stamp.nanosec = ts.tv_nsec;
                 message.data = b;
                 echo_back_bit_publishers.at(j++)->publish(message);
             }
