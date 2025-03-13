@@ -9,4 +9,4 @@ CONTEC デジタル入出力機器を操作するためのドライバーは**�
 
 ### Linux 向けドライバーのビルド方法
 
-Linux 向けドライバーのビルド方法については [BUILD_CDIO_DRIVER.md](BUILD_CDIO_DRIVER) をご覧ください
+Linux 向けドライバーのビルド方法については [BUILD_CDIO_DRIVER.md](BUILD_CDIO_DRIVER.md) をご覧ください
